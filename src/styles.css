@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    background-color: rgb(163, 172, 172);
+}
+.model-box
+{
+    margin: 50px;
+    padding: 35px;
+    min-height: 280px;
+ 
+    width: 100%;
+    max-width: 590px;
+    background: azure;
+    border-radius: 5px;
+    text-align: center;
+}

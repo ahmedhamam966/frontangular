@@ -1,0 +1,48 @@
+
+
+<div class=" centered-content">
+    <div class="task-manager-container">
+        <div class="sidebar">
+            <h1 class="title has-text-primary">Lists</h1>
+
+<div class="list-menu">
+    <a class="list-menu-item is-active">
+        <p>List #1</p>
+    </a>
+   
+    <a class="list-menu-item"*ngFor="let list of lists"[routerLink]="['/lists',list._id]" routerLinkActive="is-active">
+        <p>{{list.title}}</p>
+    </a>
+    
+</div>
+<button class="btn btn-primary "routerLink="/newlist">NewTask</button>
+        </div>
+        <div class="tasks-list-container">
+            <div *ngIf="tasks">
+                <div class="top-bar">
+                    <h1 class="title has-text-primary">Tasks </h1>
+
+                    <div class="btn-group">
+                        <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Small button
+                        </button>
+                        <div class="dropdown-menu">
+                          ...
+                        </div>
+                      </div>
+                </div>
+         
+            <div class="task "*ngFor="let task of tasks" (click)="taskcomp(task)"[ngClass]="{'complete':task.complete}">
+                <h3>{{task.title}}</h3>
+            </div>
+           <h3 class="notasks" *ngIf="tasks.length===0">There are no tasks here! click the button to add task</h3>
+        </div>
+
+        <div *ngIf="!tasks">
+            <h3 class="notasks ">please select task</h3>
+        </div>
+            <button type="button" class="btn btn-success btn-circle btn-sm" routerLink="newtask">+</button> 
+        </div>
+   
+    </div>
+</div>
